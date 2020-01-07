@@ -32,7 +32,12 @@ namespace BooleanLogic
 
             Console.WriteLine(true && true && true && false);
             Console.WriteLine(true && true && true || false);
-            
+
+            if (true && ((true || false) || true) && ((false && false) || (true && true)))
+            {
+                Console.WriteLine("Wow that was confusing.");
+            }
+
             Console.ReadLine();
         }
     }
