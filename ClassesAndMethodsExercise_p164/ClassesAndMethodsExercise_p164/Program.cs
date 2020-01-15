@@ -10,12 +10,19 @@ namespace ClassesAndMethodsExercise_p164
     {
         static void Main(string[] args)
         {
-            MathOperation.DivideByTwo(5, out int rem1);
-            Console.WriteLine("The remainder is " + rem1);
+            // instantiation
+            MathOperation test = new MathOperation();
+
+            Console.WriteLine("Please enter a number");
+            int num = Convert.ToInt32(Console.ReadLine());
+
+            test.DivideByTwo(num, out int prod1, out int rem1);
+            Console.WriteLine(num + " divided by 2 equals " + prod1 + " with remainder of " + rem1);
             Console.ReadLine();
 
-            MathOperation.DivideByTwo(20, out int rem2);
-            Console.WriteLine("The remainder is " + rem2);
+            // static class
+            MoreMathOp.DivideByThree(20, out int prod2, out int rem2);
+            Console.WriteLine("20 divided by 3 equals " + prod2 + " with remainder of " + rem2);
             Console.ReadLine();
         }
     }
