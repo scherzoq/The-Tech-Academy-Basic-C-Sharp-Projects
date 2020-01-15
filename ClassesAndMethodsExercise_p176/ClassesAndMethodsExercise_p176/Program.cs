@@ -13,6 +13,10 @@ namespace ClassesAndMethodsExercise_p176
             Employee test = new Employee { firstName = "Sample", lastName = "Student" };
             test.SayName();
             Console.ReadLine();
+
+            IQuittable interfaceTest = test;
+            interfaceTest.Quit(test);
+            Console.ReadLine();
         }
     }
 }
