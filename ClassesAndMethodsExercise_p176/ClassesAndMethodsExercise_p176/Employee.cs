@@ -6,17 +6,20 @@ using System.Threading.Tasks;
 
 namespace ClassesAndMethodsExercise_p176
 {
-    class Employee : Person, IQuittable
+    class Employee<T> : Person, IQuittable
     {
         public override void SayName()
         {
             Console.WriteLine("Employee Name:");
-            base.SayName();
+            Console.WriteLine(firstName + " " + lastName);
         }
 
-        public void Quit(Employee employee)
-        {
-            Console.WriteLine(employee.firstName + " " + employee.lastName + " has quit");
-        }
+        //public void Quit(Employee employee)
+        //{
+        //    Console.WriteLine(employee.firstName + " " + employee.lastName + " has quit");
+        //}
+
+        // Generics exercise, page 187
+        public List<T> things { get; set; }
     }
 }

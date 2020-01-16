@@ -9,6 +9,6 @@ namespace ClassesAndMethodsExercise_p176
     // Interface exercise, page 179
     interface IQuittable
     {
-        void Quit(Employee employee);
+        //void Quit(Employee employee);
     }
 }
