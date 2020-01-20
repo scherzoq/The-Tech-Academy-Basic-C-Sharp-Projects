@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace TwentyOne
 {
-    class Dealer
+    public class Dealer
     {
         public string Name { get; set; }
         public Deck Deck { get; set; }
@@ -15,7 +16,12 @@ namespace TwentyOne
         public void Deal(List<Card> Hand)
         {
             Hand.Add(Deck.Cards.First());
+            string card = string.Format(Deck.Cards.First().ToString() + "\n");
             Console.WriteLine(Deck.Cards.First().ToString() + "\n");
+            using (StreamWriter file = new StreamWriter(@"C:\Users\John\Logs\log.txt", true))
+            {
+                file.WriteLine(card);
+            }
             Deck.Cards.RemoveAt(0);
         }
     }
